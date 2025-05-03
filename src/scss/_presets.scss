@@ -1,0 +1,30 @@
+:root {
+  font-size: 62.5%;
+  --black: #000000;
+  --dark-gray: #a0a0a0;
+  --white: #ffffff;
+  --gray: #979797;
+  --very-dark-gray: #444444;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0rem;
+  padding: 0rem;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+picture {
+  display: flex;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,39 @@
+.u-fw-500 {
+  font-weight: 500;
+}
+
+.u-fw-600 {
+  font-weight: 600;
+}
+
+.u-fw-700 {
+  font-weight: 700;
+}
+
+.u-fc-black {
+  color: var(--black);
+}
+
+.u-fc-dark-gray {
+  color: var(--dark-gray);
+}
+
+.u-ta-center {
+  text-align: center;
+}
+
+.u-fc-white {
+  color: var(--white);
+}
+
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
