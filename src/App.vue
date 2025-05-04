@@ -31,18 +31,35 @@ const furnitureHighlights = [
 </script>
 <template>
   <Header />
-  <main>
+  <main class="c-main">
     <SVGDefinitions />
 
-    <Carousel :items="furnitureHighlights" />
+    <div class="c-main__content">
+      <Carousel :items="furnitureHighlights" />
 
-    <About />
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      <About />
     </div>
   </main>
+  <!-- <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      >Frontend Mentor</a
+    >. Coded by <a href="#">Your Name Here</a>.
+  </div> -->
 </template>
+<style scoped lang="scss">
+@use "./scss/functions" as f;
+
+.c-main {
+  &__content {
+    @include f.breakpoint(medium) {
+      max-width: 50rem;
+      margin: 0 auto; /* Center the content */
+    }
+
+    @include f.breakpoint(large) {
+      max-width: 144rem;
+    }
+  }
+}
+</style>

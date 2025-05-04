@@ -67,8 +67,19 @@ const handlePreviousPanel = () => {
 
   &__controls {
     position: absolute;
-    bottom: 0rem;
+    top: 30.4rem;
     right: 0rem;
+
+    @include f.breakpoint(medium) {
+      top: 37rem;
+    }
+
+    @include f.breakpoint(large) {
+      top: 45.4rem;
+      right: unset;
+      left: 84rem;
+      transform: translateX(-100%);
+    }
   }
 }
 </style>

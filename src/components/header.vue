@@ -27,20 +27,25 @@ onUpdated(() => {
   <header class="c-header">
     <div class="l-header__wrapper">
       <div class="c-header__content" data-size="small">
-        <Button
-          variant="menu-control"
-          alt-text="open menu"
-          @click="toggleDialog"
-          ref="openBtn"
-          :expanded="showDialog"
-          ><svg width="20" height="14" focusable="false">
-            <use xlink:href="#icon-hamburger" /></svg
-        ></Button>
-        <a href="#"
-          ><svg width="62" height="14" focusable="false">
-            <use xlink:href="#logo" />
-          </svg>
-        </a>
+        <div>
+          <Button
+            variant="menu-control"
+            alt-text="open menu"
+            @click="toggleDialog"
+            ref="openBtn"
+            :expanded="showDialog"
+            ><svg width="20" height="14" focusable="false">
+              <use xlink:href="#icon-hamburger" /></svg
+          ></Button>
+        </div>
+        <div>
+          <a href="#"
+            ><svg width="62" height="14" focusable="false">
+              <use xlink:href="#logo" />
+            </svg>
+          </a>
+        </div>
+        <div></div>
       </div>
       <div class="c-header__content" data-size="large">
         <a href="#"
@@ -88,6 +93,10 @@ onUpdated(() => {
       @include f.breakpoint(large) {
         display: none;
       }
+
+      & div {
+        flex-grow: 1;
+      }
     }
 
     &[data-size="large"] {
@@ -104,6 +113,10 @@ onUpdated(() => {
 .l-header__wrapper {
   max-width: 32.7rem;
   margin: 0rem auto;
+
+  @include f.breakpoint(medium) {
+    max-width: 42rem;
+  }
 
   @include f.breakpoint(large) {
     max-width: 131.2rem;
