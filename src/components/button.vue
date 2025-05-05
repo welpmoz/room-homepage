@@ -7,7 +7,7 @@ const {
   expanded = null,
 } = defineProps<{
   variant: "normal" | "carousel-control" | "menu-control";
-  altText: string | null;
+  altText?: string | null;
   expanded?: boolean | null;
 }>();
 
