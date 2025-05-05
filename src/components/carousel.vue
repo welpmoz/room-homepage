@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onUpdated, ref, useTemplateRef } from "vue";
 import Button from "./button.vue";
 import Panel from "./panel.vue";
 
@@ -15,6 +15,21 @@ const { items } = defineProps<{
 }>();
 
 const currentPanel = ref(0);
+const alertsDiv = useTemplateRef<HTMLDivElement>("alertsDiv");
+let alertInterval: number;
+
+const pushAlertMessage = (message: string) => {
+  if (alertsDiv.value) {
+    const alert = document.createElement("div");
+    alert.setAttribute("role", "alert");
+    alert.innerHTML = message;
+    alertsDiv.value.appendChild(alert);
+    clearTimeout(alertInterval);
+    alertInterval = setTimeout(() => {
+      alertsDiv.value!.innerHTML = "";
+    }, 2000);
+  }
+};
 
 const changePanel = (newPanelIndex: number) => {
   currentPanel.value = newPanelIndex;
@@ -30,11 +45,24 @@ const handlePreviousPanel = () => {
     (currentPanel.value - 1 + items.length) % items.length;
   changePanel(previousPanelIndex);
 };
+
+onUpdated(() => {
+  pushAlertMessage(
+    `Showing panel ${currentPanel.value + 1} of (${items.length})`
+  );
+});
 </script>
 
 <template>
-  <div class="c-carousel">
-    <div class="c-carousel__controls" role="group" id="highlights-title">
+  <section class="c-carousel" aria-labelledby="carousel-title">
+    <h2 class="u-visually-hidden" id="carousel-title">
+      Carousel furniture highlights
+    </h2>
+    <div
+      class="c-carousel__controls"
+      role="group"
+      aria-labelledby="highlights-title"
+    >
       <h3 id="highlights-title" class="u-visually-hidden">Carousel controls</h3>
       <Button
         variant="carousel-control"
@@ -57,7 +85,8 @@ const handlePreviousPanel = () => {
       :key="item.title"
       v-bind="item"
     />
-  </div>
+    <div class="u-visually-hidden" ref="alertsDiv"></div>
+  </section>
 </template>
 <style scoped lang="scss">
 @use "../scss/functions" as f;

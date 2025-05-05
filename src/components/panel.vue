@@ -28,7 +28,7 @@ const { title, description, imgName } = defineProps<{
       </div>
       <div class="l-panel__grid-content">
         <div class="c-panel__body">
-          <h3 class="u-text-heading-1 u-fw-600 u-fc-black">{{ title }}</h3>
+          <p class="u-text-heading-1 u-fw-600 u-fc-black">{{ title }}</p>
           <div class="l-panel__description">
             <p class="u-text-body u-fw-500 u-fc-dark-gray">{{ description }}</p>
           </div>

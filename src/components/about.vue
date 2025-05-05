@@ -3,7 +3,7 @@ import aboutLightImg from "../images/image-about-light.jpg";
 import aboutDarkImg from "../images/image-about-dark.jpg";
 </script>
 <template>
-  <section class="c-about">
+  <section class="c-about" aria-labelledby="about-title">
     <img
       :src="aboutDarkImg"
       width="100%"
@@ -12,7 +12,9 @@ import aboutDarkImg from "../images/image-about-dark.jpg";
       class="c-about__hero"
     />
     <div class="c-about__body">
-      <h3 class="u-text-heading-2 u-fw-700 u-fc-black">About our furniture</h3>
+      <h2 class="u-text-heading-2 u-fw-700 u-fc-black" id="about-title">
+        About our furniture
+      </h2>
       <p class="u-text-body u-fw-500 u-fc-dark-gray">
         Our multifunctional collection blends design and function to suit your
         individual taste. Make each room unique, or pick a cohesive theme that

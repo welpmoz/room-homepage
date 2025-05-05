@@ -41,6 +41,7 @@ onUpdated(() => {
         <div>
           <a href="#"
             ><svg width="62" height="14" focusable="false">
+              <title>Logo (go to homepage)</title>
               <use xlink:href="#logo" />
             </svg>
           </a>
@@ -50,6 +51,7 @@ onUpdated(() => {
       <div class="c-header__content" data-size="large">
         <a href="#"
           ><svg width="62" height="14" focusable="false">
+            <title>Logo (go to homepage)</title>
             <use xlink:href="#logo" />
           </svg>
         </a>
@@ -58,7 +60,9 @@ onUpdated(() => {
           accent-color="white"
         />
       </div>
-      <Dialog :show="showDialog"
+      <Dialog
+        :show="showDialog"
+        label="Use this modal to navigate through the page"
         ><Button
           variant="menu-control"
           alt-text="close menu"

@@ -4,6 +4,7 @@ import Navigation from "./navigation.vue";
 
 const { show } = defineProps<{
   show: boolean;
+  label: string;
 }>();
 
 const dialogRef = useTemplateRef<HTMLElement>("dialogRef");
@@ -48,7 +49,8 @@ onBeforeUnmount(() => {
 
 <template>
   <div role="dialog" aria-modal>
-    <div role="document">
+    <div role="document" aria-labelledby="dialog-title">
+      <span class="u-visually-hidden" id="dialog-title">{{ label }}</span>
       <div v-if="show" class="c-dialog__curtain"></div>
       <div class="c-dialog" :hidden="!show" ref="dialogRef">
         <div class="l-dialog__wrapper">

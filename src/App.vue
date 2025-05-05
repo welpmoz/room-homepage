@@ -31,8 +31,10 @@ const furnitureHighlights = [
 </script>
 <template>
   <Header />
-  <main class="c-main">
+  <main class="c-main" aria-labelledby="web-title">
     <SVGDefinitions />
+
+    <h1 class="u-visually-hidden">Room homepage website</h1>
 
     <div class="c-main__content">
       <Carousel :items="furnitureHighlights" />
