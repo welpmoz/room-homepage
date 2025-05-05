@@ -10,7 +10,6 @@ This is a solution to the [Room homepage challenge on Frontend Mentor](https://w
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
 
 ## Overview
 
@@ -38,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Code](https://github.com/welpmoz/room-homepage)
+- Live Site URL: [Live](https://benevolent-rolypoly-55535b.netlify.app/)
 
 ## My process
 
