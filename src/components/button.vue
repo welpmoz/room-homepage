@@ -8,7 +8,7 @@ const {
 } = defineProps<{
   variant: "normal" | "carousel-control" | "menu-control";
   altText: string | null;
-  expanded: boolean | null;
+  expanded?: boolean | null;
 }>();
 
 const emit = defineEmits(["click"]);
